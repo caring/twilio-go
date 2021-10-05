@@ -166,7 +166,7 @@ func TestEnqueueTwiML(t *testing.T) {
 				WorkflowSID: "12345abcde",
 				Task:        &Task{Task: `{"account_number": "12345abcdef"}`},
 			}},
-			out: `<Response><Enqueue workflowSid="12345abcde"><Task>{"account_number": "12345abcdef"}</Task></Enqueue></Response>`,
+			out: `<Response><Enqueue workflowSid="12345abcde"><Task>{&#34;account_number&#34;: &#34;12345abcdef&#34;}</Task></Enqueue></Response>`,
 		},
 	}
 
