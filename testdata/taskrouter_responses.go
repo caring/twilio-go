@@ -205,7 +205,7 @@ var CreateTaskResponse = []byte(`
   "workflow_sid": "WWXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
   "workflow_friendly_name": "Example Workflow",
   "task_queue_friendly_name": "Example Task Queue",
-  "addons": {},
+  "addons": "{}",
   "links": {
     "task_queue": "https://taskrouter.twilio.com/v1/Workspaces/WSXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/TaskQueues/WQXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
     "workflow": "https://taskrouter.twilio.com/v1/Workspaces/WSXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Workflows/WWXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
