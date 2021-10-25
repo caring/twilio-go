@@ -189,9 +189,7 @@ var CreateTaskResponse = []byte(`
   "account_sid": "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
   "age": 25200,
   "assignment_status": "pending",
-  "attributes": {
-    "type": "support"
-  },
+  "attributes": "{\"type\": \"support\"}",
   "date_created": "2014-05-14T18:50:02Z",
   "date_updated": "2014-05-15T07:26:06Z",
   "task_queue_entered_date": null,
