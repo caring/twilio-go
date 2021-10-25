@@ -5,7 +5,7 @@ import (
 	"net/url"
 )
 
-const TaskPathPart = "Task"
+const TaskPathPart = "Tasks"
 
 type TaskService struct {
 	client       *Client
