@@ -51,12 +51,24 @@ type Dial struct {
 	Timeout                       *uint  `xml:"timeout,attr,omitempty"`
 	Trim                          string `xml:"trim,attr,omitempty"`
 
-	Client     string      `xml:",omitempty"`
+	Client     Client      `xml:",omitempty"`
 	Conference *Conference `xml:",omitempty"`
 	Number     string      `xml:",omitempty"`
 	Queue      string      `xml:",omitempty"`
 	SIM        string      `xml:",omitempty"`
 	SIP        string      `xml:",omitempty"`
+}
+
+type Client struct {
+	Client string `xml:",omitempty"`
+
+	Identity  string      `xml:"Identity,omitempty"`
+	Paramater []Parameter `xml:"Parameter,omitempty"`
+}
+
+type Parameter struct {
+	Name  string `xml:"name,attr"`
+	Value string `xml:"value,attr"`
 }
 
 // Say TwiML xml datagram
