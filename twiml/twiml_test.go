@@ -142,6 +142,14 @@ func TestConferenceTwiML(t *testing.T) {
 			}}},
 			out: `<Response><Dial><Conference record="record-from-start" recordingStatusCallback="www.myexample.com">LoveTwilio</Conference></Dial></Response>`,
 		},
+		{ // Send to Client
+			in:  &TwiML{Dial: &Dial{Client: &Client{Client: "user_jane"}}},
+			out: `<Response><Dial><Client>user_jane</Client></Dial></Response>`,
+		},
+		{ // Send custom parameters to Client
+			in:  &TwiML{Dial: &Dial{Client: &Client{Identity: "user_jane", Parameter: []Parameter{{Name: "FirstName", Value: "Jane"}, {Name: "LastName", Value: "Doe"}}}}},
+			out: `<Response><Dial><Client><Identity>user_jane</Identity><Parameter name="FirstName" value="Jane"></Parameter><Parameter name="LastName" value="Doe"></Parameter></Client></Dial></Response>`,
+		},
 	}
 
 	testTwiML(t, tests)
