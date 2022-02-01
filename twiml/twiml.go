@@ -51,12 +51,27 @@ type Dial struct {
 	Timeout                       *uint  `xml:"timeout,attr,omitempty"`
 	Trim                          string `xml:"trim,attr,omitempty"`
 
-	Client     string      `xml:",omitempty"`
+	Client     *Client     `xml:",omitempty"`
 	Conference *Conference `xml:",omitempty"`
 	Number     string      `xml:",omitempty"`
 	Queue      string      `xml:",omitempty"`
 	SIM        string      `xml:",omitempty"`
 	SIP        string      `xml:",omitempty"`
+}
+
+type Client struct {
+	Client string `xml:",chardata"`
+
+	Identity  string      `xml:"Identity,omitempty"`
+	Parameter []Parameter `xml:"Parameter,omitempty"`
+}
+
+// Parameter is a key value for client
+// NOTE: at current time the go encoding/xml library does not support self closing tags https://github.com/golang/go/issues/21399
+// so Parameter will be rendered <Parameter name="" value=""></Parameter> instead of <Parameter name="" value="" />
+type Parameter struct {
+	Name  string `xml:"name,attr"`
+	Value string `xml:"value,attr"`
 }
 
 // Say TwiML xml datagram
